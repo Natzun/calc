@@ -8,6 +8,43 @@
   <title>calc</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <!--! JS CODE [BEGIN] -->
+
+  <script>
+    var lastInput, currentInput, resultInput;
+
+    currentInput = 0;
+
+    function insert(newInput) {
+      currentInput = parseInt(currentInput + newInput)
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const display = document.getElementById('displaySpan')
+      display.innerText = currentInput;
+    }
+
+    function add(a = required(), b = required()) {
+      return a + b;
+    }
+
+    function multiply(a = required(), b = required()) {
+      return a * b;
+    }
+
+    function subtract(a = required(), b = required()) {
+      return a - b;
+    }
+
+    function divide(a = required(), b = required()) {
+      return a / b;
+    }
+  </script>
+
+  <!--! JS CODE [END] -->
+
 </head>
 
 <body>
@@ -24,7 +61,7 @@
     <!--? ['C', 'BACKSPACE', '/'] -->
     <tr>
       <td>
-        <button class="opButton" id="btnCancel">C</button>
+        <button class="opButton" onclick="insert(2)" id="btnCancel">C</button>
       </td>
       <td colspan="2">
         <button class="opButton" id="btnBackspace">BACKSPACE</button>
@@ -102,7 +139,6 @@
   <!--! MAIN CODE [END] -->
 
   <script src="./renderer.js"></script>
-  <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
